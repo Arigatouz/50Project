@@ -15,8 +15,74 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  background-color: #333;
+  position: relative;
 }
+.roundingBorder {
+  position: absolute;
 
+  width: 95%;
+  height: 90vh;
+  & .border1,
+  & .border2,
+  & .border3,
+  & .border4 {
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+  }
+  & .border1 {
+    height: 0;
+    position: absolute;
+    border-left: 5px solid rgb(119, 211, 44);
+    box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616),
+      6px 6.7px 5.3px rgba(119, 211, 44, 0.486),
+      12px 12.5px 10px rgba(119, 211, 44, 0.664),
+      22px 22.3px 17.9px rgba(119, 211, 44, 0.705),
+      41px 41.8px 33.4px rgba(119, 211, 44, 0.863),
+      80px 100px 80px rgba(119, 211, 44, 0.171);
+    animation: borderMovementLeft 3s linear 1s infinite alternate;
+  }
+  & .border2 {
+    width: 0;
+    position: absolute;
+    border-top: 5px solid rgb(119, 211, 44);
+    box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616),
+      0 6.7px 5.3px rgba(119, 211, 44, 0.486),
+      0 12.5px 10px rgba(119, 211, 44, 0.664),
+      0 22.3px 17.9px rgba(119, 211, 44, 0.705),
+      0 41.8px 33.4px rgba(119, 211, 44, 0.863),
+      0 100px 80px rgba(119, 211, 44, 0.171);
+    animation: borderMovementTop 3s linear 1s infinite alternate;
+  }
+  & .border3 {
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 5px solid rgb(119, 211, 44);
+    box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616),
+      0 -6.7px 5.3px rgba(119, 211, 44, 0.486),
+      0 -12.5px 10px rgba(119, 211, 44, 0.664),
+      0 -22.3px 17.9px rgba(119, 211, 44, 0.705),
+      0 -41.8px 33.4px rgba(119, 211, 44, 0.863),
+      0 -100px 80px rgba(119, 211, 44, 0.171);
+    animation: borderMovementBottom 3s linear 1s infinite alternate;
+  }
+  & .border4 {
+    position: absolute;
+    height: 0;
+    right: 0;
+    bottom: 0;
+    border-right: 5px solid rgb(119, 211, 44);
+    box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616),
+      -6px 6.7px 5.3px rgba(119, 211, 44, 0.486),
+      -12px 12.5px 10px rgba(119, 211, 44, 0.664),
+      -22px 22.3px 17.9px rgba(119, 211, 44, 0.705),
+      -41px 41.8px 33.4px rgba(119, 211, 44, 0.863),
+      -80px 100px 80px rgba(119, 211, 44, 0.171);
+    animation: borderMovementRight 3s linear 1s infinite alternate;
+  }
+}
 .container {
   display: flex;
   width: 90vw;
@@ -33,6 +99,10 @@ body {
   margin: 10px;
   position: relative;
   transition: flex 0.7s ease-out;
+  filter: grayscale(100%);
+  &:hover {
+    filter: brightness(80%);
+  }
   @media screen and (max-width: 700px) {
     &:nth-of-type(4),
     &:nth-of-type(5) {
@@ -49,9 +119,46 @@ body {
   }
   &.active {
     flex: 5;
+    filter: grayscale(0%);
     & h3 {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+}
+@keyframes borderMovementLeft {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 90vh;
+  }
+}
+@keyframes borderMovementTop {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 95vw;
+  }
+}
+@keyframes borderMovementBottom {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 95vw;
+  }
+}
+@keyframes borderMovementRight {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 90vh;
   }
 }

@@ -21,6 +21,67 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  background-color: #333;
+  position: relative;
+}
+
+.roundingBorder {
+  position: absolute;
+  width: 95%;
+  height: 90vh;
+}
+
+.roundingBorder .border1,
+.roundingBorder .border2,
+.roundingBorder .border3,
+.roundingBorder .border4 {
+  display: inline-block;
+  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+}
+
+.roundingBorder .border1 {
+  height: 0;
+  position: absolute;
+  border-left: 5px solid #77d32c;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616), 6px 6.7px 5.3px rgba(119, 211, 44, 0.486), 12px 12.5px 10px rgba(119, 211, 44, 0.664), 22px 22.3px 17.9px rgba(119, 211, 44, 0.705), 41px 41.8px 33.4px rgba(119, 211, 44, 0.863), 80px 100px 80px rgba(119, 211, 44, 0.171);
+          box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616), 6px 6.7px 5.3px rgba(119, 211, 44, 0.486), 12px 12.5px 10px rgba(119, 211, 44, 0.664), 22px 22.3px 17.9px rgba(119, 211, 44, 0.705), 41px 41.8px 33.4px rgba(119, 211, 44, 0.863), 80px 100px 80px rgba(119, 211, 44, 0.171);
+  -webkit-animation: borderMovementLeft 3s linear 1s infinite alternate;
+          animation: borderMovementLeft 3s linear 1s infinite alternate;
+}
+
+.roundingBorder .border2 {
+  width: 0;
+  position: absolute;
+  border-top: 5px solid #77d32c;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616), 0 6.7px 5.3px rgba(119, 211, 44, 0.486), 0 12.5px 10px rgba(119, 211, 44, 0.664), 0 22.3px 17.9px rgba(119, 211, 44, 0.705), 0 41.8px 33.4px rgba(119, 211, 44, 0.863), 0 100px 80px rgba(119, 211, 44, 0.171);
+          box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616), 0 6.7px 5.3px rgba(119, 211, 44, 0.486), 0 12.5px 10px rgba(119, 211, 44, 0.664), 0 22.3px 17.9px rgba(119, 211, 44, 0.705), 0 41.8px 33.4px rgba(119, 211, 44, 0.863), 0 100px 80px rgba(119, 211, 44, 0.171);
+  -webkit-animation: borderMovementTop 3s linear 1s infinite alternate;
+          animation: borderMovementTop 3s linear 1s infinite alternate;
+}
+
+.roundingBorder .border3 {
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-bottom: 5px solid #77d32c;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616), 0 -6.7px 5.3px rgba(119, 211, 44, 0.486), 0 -12.5px 10px rgba(119, 211, 44, 0.664), 0 -22.3px 17.9px rgba(119, 211, 44, 0.705), 0 -41.8px 33.4px rgba(119, 211, 44, 0.863), 0 -100px 80px rgba(119, 211, 44, 0.171);
+          box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616), 0 -6.7px 5.3px rgba(119, 211, 44, 0.486), 0 -12.5px 10px rgba(119, 211, 44, 0.664), 0 -22.3px 17.9px rgba(119, 211, 44, 0.705), 0 -41.8px 33.4px rgba(119, 211, 44, 0.863), 0 -100px 80px rgba(119, 211, 44, 0.171);
+  -webkit-animation: borderMovementBottom 3s linear 1s infinite alternate;
+          animation: borderMovementBottom 3s linear 1s infinite alternate;
+}
+
+.roundingBorder .border4 {
+  position: absolute;
+  height: 0;
+  right: 0;
+  bottom: 0;
+  border-right: 5px solid #77d32c;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616), -6px 6.7px 5.3px rgba(119, 211, 44, 0.486), -12px 12.5px 10px rgba(119, 211, 44, 0.664), -22px 22.3px 17.9px rgba(119, 211, 44, 0.705), -41px 41.8px 33.4px rgba(119, 211, 44, 0.863), -80px 100px 80px rgba(119, 211, 44, 0.171);
+          box-shadow: 0 2.8px 2.2px rgba(119, 211, 44, 0.616), -6px 6.7px 5.3px rgba(119, 211, 44, 0.486), -12px 12.5px 10px rgba(119, 211, 44, 0.664), -22px 22.3px 17.9px rgba(119, 211, 44, 0.705), -41px 41.8px 33.4px rgba(119, 211, 44, 0.863), -80px 100px 80px rgba(119, 211, 44, 0.171);
+  -webkit-animation: borderMovementRight 3s linear 1s infinite alternate;
+          animation: borderMovementRight 3s linear 1s infinite alternate;
 }
 
 .container {
@@ -47,6 +108,13 @@ body {
   transition: -webkit-box-flex 0.7s ease-out;
   transition: flex 0.7s ease-out;
   transition: flex 0.7s ease-out, -webkit-box-flex 0.7s ease-out, -ms-flex 0.7s ease-out;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.panel:hover {
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
 }
 
 @media screen and (max-width: 700px) {
@@ -70,10 +138,84 @@ body {
   -webkit-box-flex: 5;
       -ms-flex: 5;
           flex: 5;
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
 }
 
 .panel.active h3 {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+@-webkit-keyframes borderMovementLeft {
+  from {
+    height: 0;
+  }
+  to {
+    height: 90vh;
+  }
+}
+
+@keyframes borderMovementLeft {
+  from {
+    height: 0;
+  }
+  to {
+    height: 90vh;
+  }
+}
+
+@-webkit-keyframes borderMovementTop {
+  from {
+    width: 0;
+  }
+  to {
+    width: 95vw;
+  }
+}
+
+@keyframes borderMovementTop {
+  from {
+    width: 0;
+  }
+  to {
+    width: 95vw;
+  }
+}
+
+@-webkit-keyframes borderMovementBottom {
+  from {
+    width: 0;
+  }
+  to {
+    width: 95vw;
+  }
+}
+
+@keyframes borderMovementBottom {
+  from {
+    width: 0;
+  }
+  to {
+    width: 95vw;
+  }
+}
+
+@-webkit-keyframes borderMovementRight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 90vh;
+  }
+}
+
+@keyframes borderMovementRight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 90vh;
+  }
 }
